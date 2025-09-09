@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0f172a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --mouse-x: 60%;
+  --mouse-y: 50%;
+  --spotlight-size: 200px; /* puedes ajustar el radio por defecto */
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Body y estilo base (usa utilidades Tailwind para el resto) */
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+/* body {
+  @apply bg-gradient-to-br from-[#071029] via-[#0a1b2a] to-[#071228] text-slate-200 antialiased;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+} */
+
+/* Wrapper que aplica el pseudo-elemento con el halo */
+.spotlight {
+  position: relative;
+}
+
+/* Pseudo-elemento que pinta el radial-gradient basado en variables CSS */
+.spotlight::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: radial-gradient(
+    circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.04) 30%,
+    transparent 55%
+  );
+  mix-blend-mode: overlay;
+  transition: opacity 160ms linear;
+  opacity: 1;
+  will-change: background-position, background;
+}
+
+/* Clase para desactivar el spotlight (ej. en móviles o cuando detectamos touch) */
+.no-spotlight::before {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Respeta prefer-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .spotlight::before {
+    transition: none;
+  }
+}
+
+/* Opcional: ocultar por completo en pantallas pequeñas via media query */
+@media (max-width: 768px) {
+  .spotlight::before {
+    display: none;
+  }
+}
