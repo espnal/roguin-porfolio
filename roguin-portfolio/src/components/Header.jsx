@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 export default function Header() {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
@@ -16,11 +17,7 @@ export default function Header() {
           </a>
         </nav>
       </div>
-      <div className="flex space-x-4 text-textSecondary">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter</a>
-      </div>
+      <Footer />
     </header>
   );
 }
