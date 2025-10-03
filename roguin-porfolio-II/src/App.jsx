@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 import Footer from "./components/Footer";
 import "./index.css";
 import Spotlight from "./components/SpotLight";
@@ -14,6 +15,7 @@ export default function App() {
           <Header />
           <main className="pt-24 lg:w-[55%] lg:py-24">
             <About />
+            <Skills />
             <Experience />
             <Projects />
           </main>

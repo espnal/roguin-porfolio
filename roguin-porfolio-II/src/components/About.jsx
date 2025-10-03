@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+      className="mb-2 scroll-mt-16 md:mb-24 lg:mb-24 lg:scroll-mt-24">
       <p className="text-textSecondary leading-relaxed mb-4">
         I’m a fullstack developer passionate about building scalable, secure,
         and high-performance systems that serve as the backbone of great digital

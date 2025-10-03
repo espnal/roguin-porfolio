@@ -54,6 +54,7 @@ export default function Experience() {
       id="experience"
       className="max-w-4xl mx-auto px-5 lg:px-0 lg:scroll-mt-28 cursor-pointer"
       aria-label="Work experience">
+      <hr className="border-gray-600 mb-12" />
       <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
         Experience
       </h2>
