@@ -142,7 +142,6 @@ const SkillsSection = () => {
               const level = parseInt(item.getAttribute("data-level"), 10);
               const progressBar = item.querySelector(".progress-bar-v2");
               if (progressBar) {
-                // Apply the width with a small delay to ensure the transition is visible
                 setTimeout(() => {
                   progressBar.style.width = `${level}%`;
                 }, 100);
@@ -152,7 +151,10 @@ const SkillsSection = () => {
           }
         });
       },
-      { threshold: 0.5 } // 50% visibility
+      {
+        threshold: 0.2, // easier to trigger on mobile
+        rootMargin: "0px 0px -10% 0px", // start a bit earlier
+      }
     );
 
     if (sectionRef.current) {

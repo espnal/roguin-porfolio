@@ -84,7 +84,7 @@ export default function Header() {
       </button>
 
       <div>
-        <h1 className="text-5xl font-bold">Roguin Peña</h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Roguin Peña</h1>
         <p className="mt-2 text-textSecondary">Software Developer</p>
         <p className="mt-4 max-w-xs leading-normal text-textSecondary">
           I develop thoughtful, maintainable solutions that bring clarity and
