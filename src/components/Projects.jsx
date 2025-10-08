@@ -51,7 +51,9 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="mb-16 md:mb-24 lg:mb-36 cursor-pointer">
+    <section
+      id="projects"
+      className="mb-2 scroll-mt-16 md:mb-24 lg:mb-24 lg:scroll-mt-24 cursor-pointer">
       <hr className="border-gray-600 mb-12" />
       <ul>
         {projects.map((p, i) => (
@@ -83,7 +85,9 @@ export default function Projects() {
                   <FiExternalLink className="ml-2 opacity-70" />
                 </a>
               </h3>
-              <p className="mt-2 text-slate-300">{p.desc}</p>
+              <p className="mt-2 text-textSecondary leading-relaxed mb-4">
+                {p.desc}
+              </p>
 
               {/* Technologies section with same style as Experience.jsx */}
               <ul

@@ -52,7 +52,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="max-w-4xl mx-auto px-5 lg:px-0 lg:scroll-mt-28 cursor-pointer"
+      className="mb-2 scroll-mt-16 md:mb-24 lg:mb-24 lg:scroll-mt-24 cursor-pointer"
       aria-label="Work experience">
       <hr className="border-gray-600 mb-12" />
       <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
@@ -67,7 +67,7 @@ export default function Experience() {
             <span className="absolute -inset-x-4 -inset-y-2.5 hidden transition rounded-md lg:block " />
 
             <span
-              className="z-10 mb-2 text-xs font-medium uppercase tracking-wide text-slate-400 sm:col-span-2"
+              className="z-10 mb-2 text-xs font-medium uppercase tracking-wide text-textSecondary sm:col-span-2"
               aria-label={exp.date}>
               {exp.date}
             </span>
@@ -80,7 +80,7 @@ export default function Experience() {
                   {exp.title} · {exp.company}
                 </span>
               </h3>
-              <p className="mt-2 text-sm leading-normal text-slate-400">
+              <p className="mt-2 text-textSecondary leading-relaxed mb-4">
                 {exp.description}
               </p>
               <ul
